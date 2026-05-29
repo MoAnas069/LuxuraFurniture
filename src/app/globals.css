@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:wght@400..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+@theme inline {
+  --color-lux-bg: #F5F0E8;
+  --color-lux-bg-alt: #EAE2D5;
+  --color-lux-bg-ivory: #FAF7F2;
+  --color-lux-dark: #111111;
+  --color-lux-gold: #C7A16B;
+  --color-lux-gold-deep: #A87B42;
+  --color-lux-gold-soft: rgba(199, 161, 107, 0.18);
+  --color-lux-text: #111111;
+  --color-lux-text-muted: rgba(17, 17, 17, 0.65);
+  --color-lux-border: rgba(17, 17, 17, 0.08);
+
+  --font-serif: var(--font-playfair), "Times New Roman", serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-lux-bg text-lux-text font-sans antialiased selection:bg-lux-gold selection:text-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal;
+  }
+}
+
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
